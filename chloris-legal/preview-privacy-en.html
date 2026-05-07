@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Chloris</title>
+<meta name="description" content="Privacy Policy for Chloris: Plant Scan & Garden.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --bg-warm: #ede8dc;
+    --ink: #1a2419;
+    --ink-soft: #4a5648;
+    --leaf: #4a6741;
+    --leaf-deep: #2d4226;
+    --accent: #c9a961;
+    --line: rgba(26, 36, 25, 0.12);
+    --line-soft: rgba(26, 36, 25, 0.06);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    background-image:
+      radial-gradient(circle at 100% 0%, rgba(74, 103, 65, 0.04) 0%, transparent 30%),
+      radial-gradient(circle at 0% 100%, rgba(201, 169, 97, 0.04) 0%, transparent 30%);
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 32px 96px;
+  }
+
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 56px;
+  }
+
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s, gap 0.3s;
+  }
+
+  .back:hover {
+    color: var(--leaf);
+    gap: 14px;
+  }
+
+  .back-arrow {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand-mark {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--leaf) 0%, var(--leaf-deep) 100%);
+    display: grid;
+    place-items: center;
+    color: white;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 16px;
+    font-style: italic;
+  }
+
+  .brand-name {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--leaf);
+  }
+
+  /* MARKDOWN CONTENT STYLES */
+  .doc h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    color: var(--ink);
+  }
+
+  .doc h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin-top: 56px;
+    margin-bottom: 20px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line-soft);
+    color: var(--leaf-deep);
+  }
+
+  .doc h2:first-of-type {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 48px;
+  }
+
+  .doc h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 32px;
+    margin-bottom: 12px;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+
+  .doc p {
+    margin-bottom: 18px;
+    color: var(--ink);
+  }
+
+  .doc strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .doc em {
+    font-style: italic;
+  }
+
+  .doc a {
+    color: var(--leaf);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(74, 103, 65, 0.3);
+    transition: border-color 0.2s, color 0.2s;
+    word-break: break-word;
+  }
+
+  .doc a:hover {
+    color: var(--leaf-deep);
+    border-bottom-color: var(--leaf);
+  }
+
+  .doc ul, .doc ol {
+    margin-bottom: 20px;
+    padding-left: 24px;
+  }
+
+  .doc li {
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+
+  .doc ul li::marker {
+    color: var(--accent);
+  }
+
+  .doc table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+    background: rgba(237, 232, 220, 0.4);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .doc th {
+    background: var(--leaf);
+    color: white;
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
+
+  .doc td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line-soft);
+    color: var(--ink);
+  }
+
+  .doc tr:last-child td {
+    border-bottom: none;
+  }
+
+  .doc hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line), transparent);
+    margin: 56px 0;
+  }
+
+  /* First paragraph (effective date / last updated) treatment */
+  .doc > p:first-of-type {
+    font-size: 14px;
+    color: var(--ink-soft);
+    padding: 16px 20px;
+    background: var(--bg-warm);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 32px;
+  }
+
+  /* Italics-only final blockquote-style paragraph */
+  .doc > p:last-child > em:only-child {
+    display: block;
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    font-size: 15px;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 32px 20px 64px; }
+    .topbar { margin-bottom: 40px; padding-bottom: 24px; }
+    .doc h1 { font-size: 32px; }
+    .doc h2 { font-size: 22px; margin-top: 40px; }
+    .doc h3 { font-size: 17px; margin-top: 24px; }
+    .doc p, .doc li { font-size: 15px; }
+    .doc table { font-size: 13px; }
+    .doc th, .doc td { padding: 10px; }
+    .doc > p:first-of-type { padding: 12px 16px; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .topbar, .doc { animation: fadeUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) backwards; }
+  .doc { animation-delay: 0.1s; }
+
+  /* Print-friendly */
+  @media print {
+    body { background: white; }
+    .topbar { border-bottom: 1px solid #999; }
+    .doc h2 { break-after: avoid; }
+    .doc table { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header class="topbar">
+    <a class="back" href="index.html">
+      <span class="back-arrow">←</span>
+      <span>Back</span>
+    </a>
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <span class="brand-name">Chloris</span>
+    </div>
+  </header>
+
+  <article class="doc">
+    <h1>Privacy Policy</h1>
+<p><strong>Last updated:</strong> 7 May 2026
+<strong>Effective date:</strong> 7 May 2026</p>
+<p>This Privacy Policy explains how <strong>Resul Sarı</strong>, a sole proprietorship registered in Türkiye ("we", "us", "our"), collects, uses, and protects information when you use the <strong>Chloris: Plant Scan &amp; Garden</strong> mobile application (the "App"). By using the App, you agree to the practices described below.</p>
+<p>We are the <strong>data controller</strong> under the EU General Data Protection Regulation (GDPR) and the <strong>veri sorumlusu</strong> under the Turkish Personal Data Protection Law No. 6698 (KVKK).</p>
+<hr />
+<h2>1. Information We Collect</h2>
+<p>We collect only the data necessary to operate the App. The categories below describe everything we process — we do not collect anything else.</p>
+<h3>1.1. Account Information</h3>
+<p>When you sign up, we collect:</p>
+<ul>
+<li><strong>Email address</strong> — for account creation, authentication, and essential service communication</li>
+<li><strong>Password</strong> — stored only as a salted hash; we never see or store it in plain text</li>
+<li><strong>User ID</strong> — a unique identifier generated by our authentication provider (Supabase)</li>
+</ul>
+<h3>1.2. Camera and Photo Library Access</h3>
+<p>The App requests permission to access your <strong>camera</strong> and <strong>photo library</strong> so that you can scan plants. Photos you scan are:</p>
+<ul>
+<li>Sent to our AI plant identification service for analysis</li>
+<li>Optionally saved to your personal in-app collection (Plantdex)</li>
+<li>Linked to your account so you can access them across devices</li>
+</ul>
+<p>You can revoke camera or photo permission at any time in your device settings. We do <strong>not</strong> scan or upload photos that you have not explicitly chosen to scan.</p>
+<h3>1.3. Plant Scan Data</h3>
+<p>When you scan a plant, we process:</p>
+<ul>
+<li>The plant photo</li>
+<li>Identification result (species name, confidence score)</li>
+<li>Timestamp and approximate scan count (for usage limits)</li>
+</ul>
+<p>This data is stored in your account and used to power your personal Plantdex collection.</p>
+<h3>1.4. Subscription and Purchase Data</h3>
+<p>When you purchase a subscription or one-time product:</p>
+<ul>
+<li>Purchase confirmation, transaction ID, and entitlement status are processed by <strong>Apple App Store</strong> or <strong>Google Play</strong> and shared with our subscription management provider (RevenueCat)</li>
+<li>We do <strong>NOT</strong> receive your full payment card number, bank details, or billing address — only the entitlement status (Pro / Free)</li>
+</ul>
+<h3>1.5. Advertising Data (Free Tier Only)</h3>
+<p>If you use the free version of the App, <strong>Google AdMob</strong> may serve ads within the App. AdMob may collect:</p>
+<ul>
+<li>Advertising identifier (IDFA on iOS, AAID on Android) — only with your consent on iOS via App Tracking Transparency</li>
+<li>Approximate device location (city level) — to serve relevant ads</li>
+<li>Device type, OS version, and ad interaction data</li>
+</ul>
+<p>You can opt out of personalised ads in your device settings or via App Tracking Transparency on iOS. <strong>Pro subscribers see no ads</strong> and have no advertising data collected by AdMob.</p>
+<h3>1.6. Technical Information</h3>
+<p>We automatically collect basic technical data needed to operate the App:</p>
+<ul>
+<li>Device model and OS version</li>
+<li>App version and crash logs (to fix bugs)</li>
+<li>IP address (for security, fraud prevention, and regional pricing)</li>
+</ul>
+<p>We do <strong>NOT</strong> collect your contacts, calendar, microphone, precise location, browsing history, or any other data outside what is listed here.</p>
+<hr />
+<h2>2. How We Use Your Information</h2>
+<p>We use your data only for the purposes listed below:</p>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>Legal Basis (GDPR)</th>
+<th>Data Used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Provide and operate the App</td>
+<td>Contract</td>
+<td>Email, photos, scan data</td>
+</tr>
+<tr>
+<td>Authenticate your account</td>
+<td>Contract</td>
+<td>Email, password hash, user ID</td>
+</tr>
+<tr>
+<td>Identify plants from photos</td>
+<td>Contract</td>
+<td>Plant photos</td>
+</tr>
+<tr>
+<td>Sync your collection across devices</td>
+<td>Contract</td>
+<td>Plant scan data, user ID</td>
+</tr>
+<tr>
+<td>Process subscriptions</td>
+<td>Contract</td>
+<td>Purchase data from Apple/Google</td>
+</tr>
+<tr>
+<td>Serve ads (free tier)</td>
+<td>Consent</td>
+<td>Advertising identifiers, ad interaction</td>
+</tr>
+<tr>
+<td>Fix bugs and improve stability</td>
+<td>Legitimate interest</td>
+<td>Crash logs, technical data</td>
+</tr>
+<tr>
+<td>Prevent fraud and abuse</td>
+<td>Legitimate interest</td>
+<td>IP address, technical data</td>
+</tr>
+<tr>
+<td>Comply with legal obligations</td>
+<td>Legal obligation</td>
+<td>All categories as required</td>
+</tr>
+</tbody>
+</table>
+<p>We do <strong>NOT</strong> sell your personal data, share it for cross-context behavioural advertising, or use it to train AI models without your consent.</p>
+<hr />
+<h2>3. How We Share Your Information</h2>
+<p>We share data only with the following service providers, strictly for the purposes listed:</p>
+<h3>3.1. Service Providers</h3>
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>Purpose</th>
+<th>Data Shared</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Supabase, Inc.</strong></td>
+<td>Authentication, database hosting</td>
+<td>Email, password hash, plant scan data</td>
+<td>USA / EU</td>
+</tr>
+<tr>
+<td><strong>RevenueCat, Inc.</strong></td>
+<td>Subscription management</td>
+<td>Purchase IDs, entitlement status</td>
+<td>USA</td>
+</tr>
+<tr>
+<td><strong>Google AdMob</strong></td>
+<td>Advertising (free tier only)</td>
+<td>Advertising ID, ad interactions</td>
+<td>USA</td>
+</tr>
+<tr>
+<td><strong>Plant ID AI provider</strong></td>
+<td>Plant identification</td>
+<td>Plant photos (no account info)</td>
+<td>USA / EU</td>
+</tr>
+<tr>
+<td><strong>Apple App Store</strong></td>
+<td>iOS payments</td>
+<td>Purchase data</td>
+<td>USA</td>
+</tr>
+<tr>
+<td><strong>Google Play</strong></td>
+<td>Android payments</td>
+<td>Purchase data</td>
+<td>USA</td>
+</tr>
+</tbody>
+</table>
+<h3>3.2. Legal Disclosures</h3>
+<p>We may disclose your data if required by law, court order, or government request, or if necessary to protect the rights, safety, or property of users or the public.</p>
+<h3>3.3. Business Transfers</h3>
+<p>If Resul Sarı is acquired by or merged with another company, your data may be transferred to the successor entity. We will notify you before any such transfer and give you the option to delete your account.</p>
+<p>We do <strong>NOT</strong> sell your personal data to third parties for any purpose.</p>
+<hr />
+<h2>4. International Data Transfers</h2>
+<p>Your data may be processed in countries outside Türkiye, including the <strong>United States</strong> and <strong>European Union</strong>, where our service providers operate. When we transfer data outside Türkiye / the EEA, we rely on:</p>
+<ul>
+<li><strong>Standard Contractual Clauses</strong> approved by the European Commission</li>
+<li>Service providers' compliance with frameworks such as the <strong>EU-U.S. Data Privacy Framework</strong></li>
+<li>KVKK-compliant transfer mechanisms (explicit consent or commitments under Article 9)</li>
+</ul>
+<hr />
+<h2>5. Data Retention</h2>
+<p>We keep your data only as long as needed:</p>
+<ul>
+<li><strong>Account data:</strong> until you delete your account</li>
+<li><strong>Plant scans / collection:</strong> until you delete them or your account</li>
+<li><strong>Crash logs:</strong> 90 days</li>
+<li><strong>Advertising data:</strong> retained by AdMob per Google's policy</li>
+<li><strong>Purchase records:</strong> as required by tax law (10 years in Türkiye)</li>
+</ul>
+<p>When you delete your account, we delete or anonymise your personal data within <strong>30 days</strong>, except where retention is required by law.</p>
+<hr />
+<h2>6. Your Rights</h2>
+<p>You have the following rights regarding your personal data:</p>
+<h3>6.1. Under GDPR (EU/EEA Users)</h3>
+<ul>
+<li><strong>Access</strong> — request a copy of your data</li>
+<li><strong>Rectification</strong> — correct inaccurate data</li>
+<li><strong>Erasure ("right to be forgotten")</strong> — delete your account and data</li>
+<li><strong>Restriction</strong> — limit how we process your data</li>
+<li><strong>Portability</strong> — receive your data in a machine-readable format</li>
+<li><strong>Objection</strong> — object to processing based on legitimate interest</li>
+<li><strong>Withdraw consent</strong> — for consent-based processing (e.g. ads)</li>
+<li><strong>Lodge a complaint</strong> with your local Data Protection Authority</li>
+</ul>
+<h3>6.2. Under KVKK (Turkish Users)</h3>
+<p>KVKK Madde 11 uyarınca veri sahibi olarak:</p>
+<ul>
+<li>Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>
+<li>İşlenen kişisel verileriniz hakkında bilgi talep etme</li>
+<li>İşlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme</li>
+<li>Yurt içinde / yurt dışında aktarıldığı kişileri bilme</li>
+<li>Eksik veya yanlış işlenmişse düzeltilmesini isteme</li>
+<li>KVKK 7. madde kapsamında <strong>silinmesini veya yok edilmesini</strong> isteme</li>
+<li>Düzeltme/silme işlemlerinin aktarıldığı üçüncü kişilere bildirilmesini isteme</li>
+<li>Otomatik sistemlerle analiz sonucunda aleyhinize çıkan sonuca itiraz etme</li>
+<li>Hukuka aykırı işleme nedeniyle zarara uğramanız hâlinde <strong>zararın giderilmesini</strong> talep etme</li>
+</ul>
+<h3>6.3. How to Exercise Your Rights</h3>
+<p>Contact us at <strong>diova@diova.app</strong> with your request. We will respond within <strong>30 days</strong>. We may require identity verification before fulfilling sensitive requests (e.g. data deletion).</p>
+<p>You can also delete your account directly from the App: <strong>Settings → Account → Delete Account</strong>.</p>
+<hr />
+<h2>7. Children's Privacy</h2>
+<p>The App is <strong>not intended for children under 13</strong> (or the equivalent minimum age in your jurisdiction). We do not knowingly collect data from children under this age. If you believe a child has provided us with personal data, contact <strong>diova@diova.app</strong> and we will delete it.</p>
+<p>For users aged 13–17, we recommend obtaining parental consent before using subscription features.</p>
+<hr />
+<h2>8. Security</h2>
+<p>We implement industry-standard security measures to protect your data:</p>
+<ul>
+<li><strong>Encryption in transit</strong> (TLS 1.2+) for all network communication</li>
+<li><strong>Encryption at rest</strong> for stored data (AES-256)</li>
+<li><strong>Hashed passwords</strong> (bcrypt or equivalent) — we never see your plain password</li>
+<li><strong>Access controls</strong> — only authorised personnel can access user data</li>
+<li><strong>Regular security reviews</strong> of our infrastructure</li>
+</ul>
+<p>No system is 100% secure. In the event of a data breach affecting your personal data, we will notify you and the relevant Data Protection Authority within <strong>72 hours</strong> as required by GDPR / KVKK.</p>
+<hr />
+<h2>9. Cookies and Similar Technologies</h2>
+<p>The App itself does not use browser cookies. However, our advertising partner (AdMob) may use <strong>device identifiers</strong> for ad serving. Our website (if any) may use cookies for basic analytics — see the website's separate cookie notice.</p>
+<hr />
+<h2>10. Changes to This Privacy Policy</h2>
+<p>We may update this Privacy Policy from time to time. Material changes will be communicated via in-app notice or email <strong>at least 30 days</strong> before they take effect. The "Last updated" date at the top reflects the most recent revision. Continued use of the App after changes take effect constitutes acceptance.</p>
+<hr />
+<h2>11. Contact and Data Protection Inquiries</h2>
+<p>For privacy-related questions, requests, or complaints:</p>
+<p><strong>Data Controller / Veri Sorumlusu:</strong>
+<strong>Resul Sarı</strong>, sole proprietor trading as <strong>Diova</strong> (Türkiye)
+Email: <strong>diova@diova.app</strong></p>
+<p><strong>For EU/EEA users:</strong> You also have the right to lodge a complaint with your local Data Protection Authority.</p>
+<p><strong>For Turkish users:</strong> Kişisel Verileri Koruma Kurumu'na (<a href="https://www.kvkk.gov.tr">www.kvkk.gov.tr</a>) şikâyette bulunma hakkınız mahfuzdur.</p>
+<hr />
+<p><em>Your privacy matters. If anything in this policy is unclear, please reach out — we'll explain in plain language.</em></p>
+  </article>
+
+</div>
+
+</body>
+</html>

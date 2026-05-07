@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kullanım Koşulları — Chloris</title>
+<meta name="description" content="Kullanım Koşulları for Chloris: Plant Scan & Garden.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --bg-warm: #ede8dc;
+    --ink: #1a2419;
+    --ink-soft: #4a5648;
+    --leaf: #4a6741;
+    --leaf-deep: #2d4226;
+    --accent: #c9a961;
+    --line: rgba(26, 36, 25, 0.12);
+    --line-soft: rgba(26, 36, 25, 0.06);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    background-image:
+      radial-gradient(circle at 100% 0%, rgba(74, 103, 65, 0.04) 0%, transparent 30%),
+      radial-gradient(circle at 0% 100%, rgba(201, 169, 97, 0.04) 0%, transparent 30%);
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 32px 96px;
+  }
+
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 56px;
+  }
+
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s, gap 0.3s;
+  }
+
+  .back:hover {
+    color: var(--leaf);
+    gap: 14px;
+  }
+
+  .back-arrow {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand-mark {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--leaf) 0%, var(--leaf-deep) 100%);
+    display: grid;
+    place-items: center;
+    color: white;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 16px;
+    font-style: italic;
+  }
+
+  .brand-name {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--leaf);
+  }
+
+  /* MARKDOWN CONTENT STYLES */
+  .doc h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    color: var(--ink);
+  }
+
+  .doc h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin-top: 56px;
+    margin-bottom: 20px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line-soft);
+    color: var(--leaf-deep);
+  }
+
+  .doc h2:first-of-type {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 48px;
+  }
+
+  .doc h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 32px;
+    margin-bottom: 12px;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+
+  .doc p {
+    margin-bottom: 18px;
+    color: var(--ink);
+  }
+
+  .doc strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .doc em {
+    font-style: italic;
+  }
+
+  .doc a {
+    color: var(--leaf);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(74, 103, 65, 0.3);
+    transition: border-color 0.2s, color 0.2s;
+    word-break: break-word;
+  }
+
+  .doc a:hover {
+    color: var(--leaf-deep);
+    border-bottom-color: var(--leaf);
+  }
+
+  .doc ul, .doc ol {
+    margin-bottom: 20px;
+    padding-left: 24px;
+  }
+
+  .doc li {
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+
+  .doc ul li::marker {
+    color: var(--accent);
+  }
+
+  .doc table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+    background: rgba(237, 232, 220, 0.4);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .doc th {
+    background: var(--leaf);
+    color: white;
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
+
+  .doc td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line-soft);
+    color: var(--ink);
+  }
+
+  .doc tr:last-child td {
+    border-bottom: none;
+  }
+
+  .doc hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line), transparent);
+    margin: 56px 0;
+  }
+
+  /* First paragraph (effective date / last updated) treatment */
+  .doc > p:first-of-type {
+    font-size: 14px;
+    color: var(--ink-soft);
+    padding: 16px 20px;
+    background: var(--bg-warm);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 32px;
+  }
+
+  /* Italics-only final blockquote-style paragraph */
+  .doc > p:last-child > em:only-child {
+    display: block;
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    font-size: 15px;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 32px 20px 64px; }
+    .topbar { margin-bottom: 40px; padding-bottom: 24px; }
+    .doc h1 { font-size: 32px; }
+    .doc h2 { font-size: 22px; margin-top: 40px; }
+    .doc h3 { font-size: 17px; margin-top: 24px; }
+    .doc p, .doc li { font-size: 15px; }
+    .doc table { font-size: 13px; }
+    .doc th, .doc td { padding: 10px; }
+    .doc > p:first-of-type { padding: 12px 16px; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .topbar, .doc { animation: fadeUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) backwards; }
+  .doc { animation-delay: 0.1s; }
+
+  /* Print-friendly */
+  @media print {
+    body { background: white; }
+    .topbar { border-bottom: 1px solid #999; }
+    .doc h2 { break-after: avoid; }
+    .doc table { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header class="topbar">
+    <a class="back" href="index.html">
+      <span class="back-arrow">←</span>
+      <span>Geri</span>
+    </a>
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <span class="brand-name">Chloris</span>
+    </div>
+  </header>
+
+  <article class="doc">
+    <h1>Kullanım Koşulları</h1>
+<p><strong>Son güncelleme:</strong> 7 Mayıs 2026
+<strong>Yürürlük tarihi:</strong> 7 Mayıs 2026</p>
+<p>Bu Kullanım Koşulları ("Koşullar"), Türkiye'de <strong>Diova</strong> ticari adıyla faaliyet gösteren şahıs şirketi <strong>Resul Sarı</strong> ("biz", "bize", "tarafımız") tarafından sunulan <strong>Chloris: Plant Scan &amp; Garden</strong> mobil uygulamasının ("Uygulama") kullanımına ilişkin sizinle ("Kullanıcı", "siz") aramızdaki yasal sözleşmeyi düzenler. Uygulamayı indirerek, kurarak veya kullanarak bu Koşullar'a tabi olmayı kabul etmiş sayılırsınız. Kabul etmiyorsanız Uygulamayı kullanmayınız.</p>
+<hr />
+<h2>1. Koşulların Kabulü</h2>
+<p>Hesap oluşturarak veya Uygulamayı kullanarak en az <strong>13 yaşında</strong> olduğunuzu (veya bulunduğunuz ülkede veri işleme onayı için gereken minimum yaşta olduğunuzu) ve bağlayıcı bir sözleşme akdetme ehliyetine sahip olduğunuzu beyan edersiniz. Bir tüzel kişilik adına kullanıyorsanız, o tüzel kişiliği bağlama yetkisine sahip olduğunuzu beyan edersiniz.</p>
+<h2>2. Lisans</h2>
+<p>Bu Koşullara uymanız şartıyla, size Uygulamayı sahip olduğunuz veya kontrol ettiğiniz cihazlara indirme ve yalnızca <strong>kişisel, ticari olmayan amaçlarla</strong> kullanma hakkı veren <strong>sınırlı, münhasır olmayan, devredilemez ve geri alınabilir bir lisans</strong> veriyoruz. Bu lisans, iOS kullanıcıları için Apple Inc., Android kullanıcıları için Google LLC tarafından kendi şartları çerçevesinde sağlanır.</p>
+<h2>3. Abonelikler ve Uygulama İçi Satın Alımlar</h2>
+<h3>3.1. Mevcut Planlar</h3>
+<ul>
+<li><strong>Chloris Pro Aylık</strong> — otomatik yenilenen abonelik, aylık ücretlendirme</li>
+<li><strong>Chloris Pro Yıllık</strong> — otomatik yenilenen abonelik, yıllık ücretlendirme</li>
+<li><strong>Chloris Pro Ömür Boyu</strong> — tek seferlik ödeme, sınırsız erişim</li>
+</ul>
+<p>Fiyatlar, satın alma anında Uygulama içinde yerel para biriminizde gösterilir.</p>
+<h3>3.2. Otomatik Yenileme</h3>
+<p>Otomatik yenilenen abonelikler, <strong>mevcut dönemin bitiminden en az 24 saat önce iptal edilmediği takdirde</strong>, her fatura döneminin sonunda otomatik olarak yenilenir. Ödeme yönteminiz, mevcut dönemin bitmesinden önceki 24 saat içinde yenileme tutarıyla ücretlendirilir.</p>
+<p>Aboneliklerinizi istediğiniz zaman:</p>
+<ul>
+<li><strong>iOS:</strong> App Store hesap ayarlarından</li>
+<li><strong>Android:</strong> Google Play hesap ayarlarından</li>
+</ul>
+<p>yönetebilir ve iptal edebilirsiniz. İptal, mevcut fatura döneminin sonunda yürürlüğe girer; kullanılmayan dönem için kısmi iade yapılmaz.</p>
+<h3>3.3. Ücretsiz Deneme (sunulduğu durumlarda)</h3>
+<p>Ücretsiz deneme sunuluyorsa, deneme süresi sona ermeden <strong>en az 24 saat önce iptal edilmediği takdirde</strong>, deneme süresinin sonunda otomatik olarak ücretli aboneliğe dönüşür. Her Apple Kimliği veya Google hesabı için yalnızca <strong>bir</strong> ücretsiz deneme hakkı tanınır.</p>
+<h3>3.4. İade Politikası</h3>
+<p>Tüm satın alımlar Apple veya Google tarafından işleme alınır ve bu platformların iade politikalarına tabidir:</p>
+<ul>
+<li><strong>iOS / App Store:</strong> <a href="https://support.apple.com/tr-tr/HT204084">https://support.apple.com/tr-tr/HT204084</a></li>
+<li><strong>Android / Google Play:</strong> <a href="https://support.google.com/googleplay/answer/2479637">https://support.google.com/googleplay/answer/2479637</a></li>
+</ul>
+<p>İadeleri doğrudan biz işleme alamayız. <strong>Tüketicinin Korunması Hakkında Kanun</strong> kapsamındaki cayma hakkınız mahfuzdur. Ömür boyu satın alımlar, yürürlükteki yasaların gerektirdiği durumlar haricinde iade edilemez.</p>
+<h3>3.5. Satın Alımları Geri Yükleme</h3>
+<p>Önceki satın alımlarınızı, Uygulama içindeki <strong>"Satın Almaları Geri Yükle"</strong> seçeneğine dokunarak geri yükleyebilirsiniz; ancak bunun için orijinal satın alma için kullanılan Apple Kimliği veya Google hesabıyla oturum açmış olmanız gerekir.</p>
+<h2>4. Kullanıcı Hesabı</h2>
+<p>Belirli özelliklere erişmek için geçerli bir e-posta adresi ile hesap oluşturmanız gerekir. Şunlardan siz sorumlusunuz:</p>
+<ul>
+<li>Giriş bilgilerinizin gizliliğini korumak</li>
+<li>Hesabınız altında gerçekleştirilen tüm faaliyetler</li>
+<li>Yetkisiz erişim durumunda derhâl <strong>diova@diova.app</strong> adresine bildirim yapmak</li>
+</ul>
+<p>Bu Koşulları ihlal eden hesapları askıya alma veya sonlandırma hakkımızı saklı tutarız.</p>
+<h2>5. Kabul Edilebilir Kullanım</h2>
+<p>Aşağıdakileri yapmamayı kabul edersiniz:</p>
+<ul>
+<li>Uygulamanın tersine mühendisliğini yapmak, kaynak koduna dönüştürmek veya parçalarına ayırmak</li>
+<li>Uygulamayı yasalara aykırı veya yasal olmayan bir amaçla kullanmak</li>
+<li>Saldırgan, hak ihlali yaratan veya zararlı içerik yüklemek</li>
+<li>Güvenlik veya abonelik mekanizmalarını atlatmaya çalışmak</li>
+<li>Otomatik sistemler (bot, scraper) ile Uygulamaya erişmek</li>
+<li>Uygulamayı veya içeriğini yeniden satmak, alt lisans vermek veya ticari olarak istismar etmek</li>
+</ul>
+<p>İhlaller, geri ödeme yapılmaksızın hesabın derhâl sonlandırılmasına yol açabilir.</p>
+<h2>6. Kullanıcı Tarafından Oluşturulan İçerik</h2>
+<p>Bitki fotoğraflarınızı, notlarınızı veya diğer içeriklerinizi koleksiyonunuza yüklerseniz ("Kullanıcı İçeriği"), bu içeriklerin sahipliği size aittir. Yüklemekle, yalnızca Hizmeti sağlamak amacıyla içeriği saklamak, görüntülemek ve işlemek için bize <strong>dünya çapında, telifsiz, münhasır olmayan bir lisans</strong> vermiş olursunuz. Kullanıcı İçeriğiniz üzerinde herhangi bir mülkiyet iddiamız yoktur ve <strong>açık rızanız olmadan</strong> içeriğinizi pazarlama için kullanmayız.</p>
+<h2>7. Bitki Tanımlama — Garanti Yoktur</h2>
+<p>Uygulama, fotoğraflardan bitkileri tanımlamak için yapay zekâ kullanır. <strong>Tanımlamalar tahminîdir ve hatalı olabilir.</strong> Uygulamaya şu konularda <strong>güvenmeyin</strong>:</p>
+<ul>
+<li>Zehirli, toksik veya yenilebilir bitkilerin tanımlanması</li>
+<li>Sağlık veya güvenlik içeren tıbbi, tarımsal veya bahçecilik kararları</li>
+<li>Korunan veya nesli tükenmekte olan türlerin yasal sınıflandırması</li>
+</ul>
+<p>Uygulama tanımlamalarına dayanarak herhangi bir bitkiyi tüketmeden, ele almadan veya tedavi etmeden önce <strong>mutlaka uzman bir kişiye danışın</strong>. Tanımlamalara güvenmekten kaynaklanan zararlardan sorumlu değiliz.</p>
+<h2>8. Fikri Mülkiyet</h2>
+<p>Uygulama; tasarımı, kodu, grafikleri, metni ve markaları (topluca "Materyaller") dâhil olmak üzere <strong>Resul Sarı'ya veya lisans verenlere aittir</strong> ve telif hakkı ile diğer fikri mülkiyet yasalarıyla korunmaktadır. Madde 2'deki sınırlı lisans dışında size hiçbir hak tanınmamaktadır.</p>
+<h2>9. Üçüncü Taraf Hizmetleri</h2>
+<p>Uygulama aşağıdaki üçüncü taraf hizmetlerini entegre eder:</p>
+<ul>
+<li><strong>Apple App Store / Google Play</strong> — ödeme işlemleri</li>
+<li><strong>Supabase</strong> — kimlik doğrulama ve veri depolama</li>
+<li><strong>AdMob (Google)</strong> — ücretsiz katman kullanıcıları için reklam</li>
+<li><strong>Yapay zekâ bitki tanıma servisleri</strong> — görüntü analizi</li>
+</ul>
+<p>Üçüncü taraf hizmetlerinin kullanımı kendi şartlarına tabidir. Üçüncü tarafların uygulamalarından sorumlu değiliz.</p>
+<h2>10. Reklamcılık</h2>
+<p>Ücretsiz katman kullanıcıları, <strong>Google AdMob</strong> üzerinden sunulan reklamları görebilir. Ücretsiz sürümü kullanarak reklam gösterimine onay vermiş olursunuz. <strong>Pro aboneleri reklamsız deneyim</strong> alır.</p>
+<h2>11. Garanti Reddi</h2>
+<p>UYGULAMA, AÇIK VEYA ZIMNİ HİÇBİR GARANTİ OLMAKSIZIN <strong>"OLDUĞU GİBİ"</strong> VE <strong>"MEVCUT OLDUĞU ŞEKİLDE"</strong> SUNULMAKTADIR. TİCARİ ELVERİŞLİLİK, BELİRLİ BİR AMACA UYGUNLUK, HAK İHLALİ YOKLUĞU VEYA BİTKİ TANIMLAMA DOĞRULUĞU GARANTİLERİ DÂHİL OLMAK ÜZERE HİÇBİR GARANTİ VERMEYİZ. UYGULAMANIN KESİNTİSİZ, HATASIZ VEYA ZARARLI BİLEŞENLERDEN ARINDIRILMIŞ OLDUĞUNU GARANTİ ETMİYORUZ.</p>
+<h2>12. Sorumluluğun Sınırlandırılması</h2>
+<p>YASALARIN İZİN VERDİĞİ AZAMİ ÖLÇÜDE, <strong>RESUL SARI</strong>, UYGULAMAYI KULLANIMINIZDAN KAYNAKLANAN DOLAYLI, ARIZÎ, ÖZEL, SONUÇSAL VEYA CEZAİ ZARARLARDAN VEYA HERHANGİ BİR KÂR, VERİ YA DA İTİBAR KAYBINDAN SORUMLU OLMAYACAKTIR. TOPLAM SORUMLULUĞUMUZ, <strong>TALEBİN ORTAYA ÇIKMASINDAN ÖNCEKİ 12 AY İÇİNDE UYGULAMA İÇİN ÖDEDİĞİNİZ TUTARI VEYA 50 USD'Yİ</strong> (HANGİSİ DAHA YÜKSEKSE) AŞMAYACAKTIR.</p>
+<h2>13. Tazminat</h2>
+<p>Bu Koşulları ihlal etmenizden veya Uygulamayı yanlış kullanmanızdan kaynaklanan tüm taleplere, zararlara veya masraflara karşı <strong>Resul Sarı'yı tazmin etmeyi ve zarara uğratmamayı</strong> kabul edersiniz.</p>
+<h2>14. Sona Erme</h2>
+<p>Bu Koşulları ihlal etmeniz hâlinde Uygulamaya erişiminizi önceden bildirim yapmaksızın derhâl sonlandırabilir veya askıya alabiliriz. Sona erme üzerine size verilen tüm haklar düşer; ancak <strong>8., 11., 12., 13. ve 17. maddeler yürürlükte kalır</strong>.</p>
+<p>Hesabınızı istediğiniz zaman <strong>diova@diova.app</strong> adresine yazarak sonlandırabilirsiniz. Sona erme, peşin ödenmiş tutarların iadesi hakkını doğurmaz.</p>
+<h2>15. Koşulların Değişmesi</h2>
+<p>Bu Koşullar zaman zaman güncellenebilir. Önemli değişiklikleri Uygulama içi bildirim veya e-posta yoluyla size duyururuz. Değişiklikler yürürlüğe girdikten sonra Uygulamayı kullanmaya devam etmeniz, <strong>kabul anlamına gelir</strong>. Üst kısımdaki "Son güncelleme" tarihi en güncel revizyonu yansıtır.</p>
+<h2>16. Apple'a Özgü Hükümler (iOS Kullanıcıları için)</h2>
+<p>Bu Koşullar sizinle Resul Sarı arasındadır; <strong>Apple Inc. taraf değildir</strong>. Apple, Uygulamadan veya içeriğinden sorumlu değildir. Yürürlükteki garantilere uyumsuzluk olması durumunda Apple'a bildirimde bulunabilirsiniz; Apple, Uygulamanın satın alma fiyatını iade edecektir. <strong>Apple'ın başka bir garanti yükümlülüğü yoktur</strong>. Apple, bu Koşulların <strong>üçüncü taraf yararlanıcısıdır</strong> ve bu Koşulları size karşı uygulayabilir.</p>
+<h2>17. Uygulanacak Hukuk ve Uyuşmazlıklar</h2>
+<p>Bu Koşullar, <strong>Türkiye Cumhuriyeti yasalarına</strong> tabidir. Bu Koşullardan doğan tüm uyuşmazlıklarda <strong>İstanbul Çağlayan Mahkemeleri ve İcra Daireleri</strong> yetkilidir. Avrupa Birliği'nde ikamet eden tüketici iseniz, ikamet ettiğiniz ülkenin mahkemelerine de başvurabilirsiniz; ülkenizin <strong>emredici tüketici koruma hükümleri</strong> saklıdır. <strong>6502 sayılı Tüketicinin Korunması Hakkında Kanun</strong> uyarınca tüketici hakem heyetlerine ve tüketici mahkemelerine başvurma hakkınız mahfuzdur.</p>
+<h2>18. İletişim</h2>
+<p>Bu Koşullar hakkında sorularınız için bize ulaşın:</p>
+<p><strong>Resul Sarı</strong>
+E-posta: <strong>diova@diova.app</strong>
+Adres talep üzerine paylaşılır.</p>
+<hr />
+<p><em>Chloris'i kullanarak bu Kullanım Koşullarını okuduğunuzu, anladığınızı ve kabul ettiğinizi beyan edersiniz.</em></p>
+  </article>
+
+</div>
+
+</body>
+</html>

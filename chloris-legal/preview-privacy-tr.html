@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gizlilik Politikası — Chloris</title>
+<meta name="description" content="Gizlilik Politikası for Chloris: Plant Scan & Garden.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --bg-warm: #ede8dc;
+    --ink: #1a2419;
+    --ink-soft: #4a5648;
+    --leaf: #4a6741;
+    --leaf-deep: #2d4226;
+    --accent: #c9a961;
+    --line: rgba(26, 36, 25, 0.12);
+    --line-soft: rgba(26, 36, 25, 0.06);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    background-image:
+      radial-gradient(circle at 100% 0%, rgba(74, 103, 65, 0.04) 0%, transparent 30%),
+      radial-gradient(circle at 0% 100%, rgba(201, 169, 97, 0.04) 0%, transparent 30%);
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 32px 96px;
+  }
+
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 56px;
+  }
+
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s, gap 0.3s;
+  }
+
+  .back:hover {
+    color: var(--leaf);
+    gap: 14px;
+  }
+
+  .back-arrow {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand-mark {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--leaf) 0%, var(--leaf-deep) 100%);
+    display: grid;
+    place-items: center;
+    color: white;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 16px;
+    font-style: italic;
+  }
+
+  .brand-name {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--leaf);
+  }
+
+  /* MARKDOWN CONTENT STYLES */
+  .doc h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    color: var(--ink);
+  }
+
+  .doc h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin-top: 56px;
+    margin-bottom: 20px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line-soft);
+    color: var(--leaf-deep);
+  }
+
+  .doc h2:first-of-type {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 48px;
+  }
+
+  .doc h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 32px;
+    margin-bottom: 12px;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+
+  .doc p {
+    margin-bottom: 18px;
+    color: var(--ink);
+  }
+
+  .doc strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .doc em {
+    font-style: italic;
+  }
+
+  .doc a {
+    color: var(--leaf);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(74, 103, 65, 0.3);
+    transition: border-color 0.2s, color 0.2s;
+    word-break: break-word;
+  }
+
+  .doc a:hover {
+    color: var(--leaf-deep);
+    border-bottom-color: var(--leaf);
+  }
+
+  .doc ul, .doc ol {
+    margin-bottom: 20px;
+    padding-left: 24px;
+  }
+
+  .doc li {
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+
+  .doc ul li::marker {
+    color: var(--accent);
+  }
+
+  .doc table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+    background: rgba(237, 232, 220, 0.4);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .doc th {
+    background: var(--leaf);
+    color: white;
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
+
+  .doc td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line-soft);
+    color: var(--ink);
+  }
+
+  .doc tr:last-child td {
+    border-bottom: none;
+  }
+
+  .doc hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line), transparent);
+    margin: 56px 0;
+  }
+
+  /* First paragraph (effective date / last updated) treatment */
+  .doc > p:first-of-type {
+    font-size: 14px;
+    color: var(--ink-soft);
+    padding: 16px 20px;
+    background: var(--bg-warm);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 32px;
+  }
+
+  /* Italics-only final blockquote-style paragraph */
+  .doc > p:last-child > em:only-child {
+    display: block;
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    font-size: 15px;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 32px 20px 64px; }
+    .topbar { margin-bottom: 40px; padding-bottom: 24px; }
+    .doc h1 { font-size: 32px; }
+    .doc h2 { font-size: 22px; margin-top: 40px; }
+    .doc h3 { font-size: 17px; margin-top: 24px; }
+    .doc p, .doc li { font-size: 15px; }
+    .doc table { font-size: 13px; }
+    .doc th, .doc td { padding: 10px; }
+    .doc > p:first-of-type { padding: 12px 16px; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .topbar, .doc { animation: fadeUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) backwards; }
+  .doc { animation-delay: 0.1s; }
+
+  /* Print-friendly */
+  @media print {
+    body { background: white; }
+    .topbar { border-bottom: 1px solid #999; }
+    .doc h2 { break-after: avoid; }
+    .doc table { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header class="topbar">
+    <a class="back" href="index.html">
+      <span class="back-arrow">←</span>
+      <span>Geri</span>
+    </a>
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <span class="brand-name">Chloris</span>
+    </div>
+  </header>
+
+  <article class="doc">
+    <h1>Gizlilik Politikası</h1>
+<p><strong>Son güncelleme:</strong> 7 Mayıs 2026
+<strong>Yürürlük tarihi:</strong> 7 Mayıs 2026</p>
+<p>Bu Gizlilik Politikası; Türkiye'de mukim şahıs şirketi <strong>Resul Sarı</strong> ("biz", "tarafımız") tarafından sunulan <strong>Chloris: Plant Scan &amp; Garden</strong> mobil uygulamasını ("Uygulama") kullandığınızda kişisel verilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu açıklar. Uygulamayı kullanarak aşağıda açıklanan uygulamaları kabul etmiş olursunuz.</p>
+<p><strong>Resul Sarı</strong>, AB Genel Veri Koruma Yönetmeliği (GDPR) kapsamında <strong>veri sorumlusu</strong> ve 6698 sayılı <strong>Kişisel Verilerin Korunması Kanunu (KVKK)</strong> kapsamında <strong>veri sorumlusu</strong> sıfatıyla hareket etmektedir.</p>
+<p>Bu metin, <strong>KVKK Madde 10</strong> kapsamındaki <strong>aydınlatma yükümlülüğümüzün</strong> yerine getirilmesi amacını da taşır.</p>
+<hr />
+<h2>1. Topladığımız Bilgiler</h2>
+<p>Uygulamayı çalıştırmak için <strong>yalnızca gerekli</strong> verileri topluyoruz. Aşağıdaki kategoriler işlediğimiz verilerin tamamını kapsar; bunlar dışında veri toplamıyoruz.</p>
+<h3>1.1. Hesap Bilgileri</h3>
+<p>Kayıt olduğunuzda topladığımız bilgiler:</p>
+<ul>
+<li><strong>E-posta adresi</strong> — hesap oluşturma, kimlik doğrulama ve hizmet iletişimi için</li>
+<li><strong>Parola</strong> — yalnızca tuzlu hash olarak saklanır; düz metin olarak görmüyor veya saklamıyoruz</li>
+<li><strong>Kullanıcı Kimliği (User ID)</strong> — kimlik doğrulama sağlayıcımız (Supabase) tarafından oluşturulan benzersiz tanımlayıcı</li>
+</ul>
+<h3>1.2. Kamera ve Fotoğraf Galerisi Erişimi</h3>
+<p>Uygulama, bitki tarayabilmeniz için <strong>kamera</strong> ve <strong>fotoğraf galerisi</strong> izni ister. Taradığınız fotoğraflar:</p>
+<ul>
+<li>Analiz için yapay zekâ bitki tanımlama servisimize gönderilir</li>
+<li>İsteğe bağlı olarak kişisel Plantdex koleksiyonunuza kaydedilir</li>
+<li>Cihazlar arası senkronizasyon için hesabınıza bağlanır</li>
+</ul>
+<p>Cihaz ayarlarınızdan kamera veya fotoğraf izinlerini istediğiniz zaman geri alabilirsiniz. <strong>Açıkça taramayı seçmediğiniz hiçbir fotoğrafı taramayız veya yüklemeyiz.</strong></p>
+<h3>1.3. Bitki Tarama Verileri</h3>
+<p>Bir bitki taradığınızda işlediğimiz veriler:</p>
+<ul>
+<li>Bitki fotoğrafı</li>
+<li>Tanımlama sonucu (tür adı, güven skoru)</li>
+<li>Zaman damgası ve yaklaşık tarama sayısı (kullanım limitleri için)</li>
+</ul>
+<p>Bu veriler hesabınıza kaydedilir ve kişisel Plantdex koleksiyonunuzu beslemek için kullanılır.</p>
+<h3>1.4. Abonelik ve Satın Alma Verileri</h3>
+<p>Bir abonelik veya tek seferlik ürün satın aldığınızda:</p>
+<ul>
+<li>Satın alma onayı, işlem kimliği ve yetkilendirme durumu <strong>Apple App Store</strong> veya <strong>Google Play</strong> tarafından işlenir ve abonelik yönetim sağlayıcımız (RevenueCat) ile paylaşılır</li>
+<li><strong>Tam kart numaranızı, banka bilgilerinizi veya fatura adresinizi GÖRMÜYORUZ</strong> — yalnızca yetkilendirme durumu (Pro / Ücretsiz) bize ulaşır</li>
+</ul>
+<h3>1.5. Reklamcılık Verileri (Yalnızca Ücretsiz Sürüm)</h3>
+<p>Uygulamanın ücretsiz sürümünü kullanıyorsanız, <strong>Google AdMob</strong> Uygulama içinde reklam sunabilir. AdMob şu verileri toplayabilir:</p>
+<ul>
+<li><strong>Reklam tanımlayıcısı</strong> (iOS'ta IDFA, Android'de AAID) — iOS'ta yalnızca App Tracking Transparency üzerinden onayınızla</li>
+<li><strong>Yaklaşık cihaz konumu</strong> (şehir düzeyinde) — alakalı reklam sunmak için</li>
+<li><strong>Cihaz tipi, OS sürümü ve reklam etkileşim verileri</strong></li>
+</ul>
+<p>Cihaz ayarlarınızdan veya iOS'taki App Tracking Transparency aracılığıyla <strong>kişiselleştirilmiş reklamlardan vazgeçebilirsiniz</strong>. <strong>Pro aboneleri reklam görmez</strong> ve AdMob tarafından reklam verisi toplanmaz.</p>
+<h3>1.6. Teknik Bilgiler</h3>
+<p>Uygulamayı çalıştırmak için otomatik olarak topladığımız temel teknik veriler:</p>
+<ul>
+<li>Cihaz modeli ve OS sürümü</li>
+<li>Uygulama sürümü ve çökme kayıtları (hataları gidermek için)</li>
+<li>IP adresi (güvenlik, dolandırıcılık önleme ve bölgesel fiyatlandırma için)</li>
+</ul>
+<p>Rehberinizi, takviminizi, mikrofonunuzu, hassas konumunuzu, tarama geçmişinizi veya <strong>burada listelenenler dışında hiçbir veriyi TOPLAMIYORUZ</strong>.</p>
+<hr />
+<h2>2. Bilgilerinizi Nasıl Kullanırız</h2>
+<p>Verilerinizi yalnızca aşağıda listelenen amaçlar için kullanıyoruz:</p>
+<table>
+<thead>
+<tr>
+<th>Amaç</th>
+<th>Hukuki Sebep (KVKK / GDPR)</th>
+<th>Kullanılan Veri</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uygulamayı sağlamak ve işletmek</td>
+<td>Sözleşmenin ifası</td>
+<td>E-posta, fotoğraflar, tarama verileri</td>
+</tr>
+<tr>
+<td>Hesabınızın kimliğini doğrulamak</td>
+<td>Sözleşmenin ifası</td>
+<td>E-posta, parola hash, kullanıcı kimliği</td>
+</tr>
+<tr>
+<td>Fotoğraflardan bitki tanımlamak</td>
+<td>Sözleşmenin ifası</td>
+<td>Bitki fotoğrafları</td>
+</tr>
+<tr>
+<td>Cihazlar arası senkronizasyon</td>
+<td>Sözleşmenin ifası</td>
+<td>Tarama verileri, kullanıcı kimliği</td>
+</tr>
+<tr>
+<td>Abonelik işlemleri</td>
+<td>Sözleşmenin ifası</td>
+<td>Apple/Google'dan satın alma verileri</td>
+</tr>
+<tr>
+<td>Reklam sunmak (ücretsiz katman)</td>
+<td><strong>Açık rıza</strong></td>
+<td>Reklam tanımlayıcıları, etkileşim</td>
+</tr>
+<tr>
+<td>Hata giderme ve istikrar</td>
+<td>Meşru menfaat</td>
+<td>Çökme kayıtları, teknik veri</td>
+</tr>
+<tr>
+<td>Dolandırıcılığı önlemek</td>
+<td>Meşru menfaat</td>
+<td>IP adresi, teknik veri</td>
+</tr>
+<tr>
+<td>Yasal yükümlülükler</td>
+<td>Yasal yükümlülük</td>
+<td>Gerektiği kadar tüm kategoriler</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Kişisel verilerinizi SATMIYORUZ</strong>, bağlamsal davranışsal reklamcılık için paylaşmıyoruz veya <strong>onayınız olmadan</strong> yapay zekâ modellerini eğitmek için kullanmıyoruz.</p>
+<hr />
+<h2>3. Bilgilerinizi Nasıl Paylaşırız</h2>
+<p>Verileri yalnızca aşağıdaki hizmet sağlayıcılarla, listelenen amaçlar dâhilinde paylaşıyoruz:</p>
+<h3>3.1. Hizmet Sağlayıcıları</h3>
+<table>
+<thead>
+<tr>
+<th>Sağlayıcı</th>
+<th>Amaç</th>
+<th>Paylaşılan Veri</th>
+<th>Konum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Supabase, Inc.</strong></td>
+<td>Kimlik doğrulama, veritabanı</td>
+<td>E-posta, parola hash, tarama verileri</td>
+<td>ABD / AB</td>
+</tr>
+<tr>
+<td><strong>RevenueCat, Inc.</strong></td>
+<td>Abonelik yönetimi</td>
+<td>Satın alma kimlikleri, yetkilendirme</td>
+<td>ABD</td>
+</tr>
+<tr>
+<td><strong>Google AdMob</strong></td>
+<td>Reklamcılık (ücretsiz sürüm)</td>
+<td>Reklam kimliği, etkileşimler</td>
+<td>ABD</td>
+</tr>
+<tr>
+<td><strong>Bitki Tanıma AI Sağlayıcısı</strong></td>
+<td>Bitki tanımlama</td>
+<td>Bitki fotoğrafları (hesap bilgisi yok)</td>
+<td>ABD / AB</td>
+</tr>
+<tr>
+<td><strong>Apple App Store</strong></td>
+<td>iOS ödeme</td>
+<td>Satın alma verileri</td>
+<td>ABD</td>
+</tr>
+<tr>
+<td><strong>Google Play</strong></td>
+<td>Android ödeme</td>
+<td>Satın alma verileri</td>
+<td>ABD</td>
+</tr>
+</tbody>
+</table>
+<h3>3.2. Yasal Açıklamalar</h3>
+<p>Yürürlükteki yasalar, mahkeme kararı veya devlet talebi gerektiriyorsa veya kullanıcıların ya da kamunun haklarını, güvenliğini veya mülkiyetini korumak için gerekli olduğunda verilerinizi açıklayabiliriz.</p>
+<h3>3.3. İş Devirleri</h3>
+<p>Resul Sarı başka bir şirket tarafından satın alınır veya birleşirse, verileriniz halef tüzel kişiliğe devredilebilir. <strong>Devirden önce sizi bilgilendireceğiz</strong> ve hesabınızı silme seçeneği sunacağız.</p>
+<p><strong>Kişisel verilerinizi hiçbir amaçla üçüncü taraflara SATMIYORUZ.</strong></p>
+<hr />
+<h2>4. Uluslararası Veri Aktarımları</h2>
+<p>Verileriniz, hizmet sağlayıcılarımızın bulunduğu <strong>Amerika Birleşik Devletleri</strong> ve <strong>Avrupa Birliği</strong> dâhil olmak üzere Türkiye dışındaki ülkelerde işlenebilir. Türkiye / AAB dışına aktarımlarda şu mekanizmalara dayanırız:</p>
+<ul>
+<li>Avrupa Komisyonu tarafından onaylanan <strong>Standart Sözleşme Hükümleri (SCC)</strong></li>
+<li>Hizmet sağlayıcıların <strong>AB-ABD Veri Gizliliği Çerçevesi</strong> gibi düzenlemelere uyumluluğu</li>
+<li>KVKK'ya uygun aktarım mekanizmaları (<strong>KVKK Madde 9</strong> kapsamında açık rıza veya taahhütler)</li>
+</ul>
+<hr />
+<h2>5. Veri Saklama</h2>
+<p>Verilerinizi yalnızca gerektiği kadar saklıyoruz:</p>
+<ul>
+<li><strong>Hesap verileri:</strong> hesabınızı silinceye kadar</li>
+<li><strong>Bitki taramaları / koleksiyon:</strong> siz silene veya hesabınızı kapatıncaya kadar</li>
+<li><strong>Çökme kayıtları:</strong> 90 gün</li>
+<li><strong>Reklamcılık verileri:</strong> Google'ın politikası uyarınca AdMob tarafından saklanır</li>
+<li><strong>Satın alma kayıtları:</strong> vergi mevzuatı gereği (Türkiye'de <strong>10 yıl</strong>)</li>
+</ul>
+<p>Hesabınızı sildiğinizde, kişisel verilerinizi <strong>30 gün içinde</strong> silinir veya anonimleştiririz; ancak yasal saklama yükümlülükleri saklıdır.</p>
+<hr />
+<h2>6. Haklarınız</h2>
+<p>Kişisel verilerinizle ilgili olarak aşağıdaki haklara sahipsiniz:</p>
+<h3>6.1. KVKK Madde 11 Kapsamında (Türkiye Kullanıcıları)</h3>
+<p>KVKK Madde 11 uyarınca <strong>veri sahibi</strong> olarak:</p>
+<ul>
+<li>Kişisel verilerinizin <strong>işlenip işlenmediğini öğrenme</strong></li>
+<li>İşlenen kişisel verileriniz hakkında <strong>bilgi talep etme</strong></li>
+<li>İşlenme <strong>amacını</strong> ve amacına uygun kullanılıp kullanılmadığını öğrenme</li>
+<li>Yurt içinde / yurt dışında <strong>aktarıldığı kişileri bilme</strong></li>
+<li>Eksik veya yanlış işlenmişse <strong>düzeltilmesini isteme</strong></li>
+<li>KVKK 7. madde kapsamında <strong>silinmesini veya yok edilmesini</strong> isteme</li>
+<li>Düzeltme/silme işlemlerinin aktarıldığı üçüncü kişilere <strong>bildirilmesini isteme</strong></li>
+<li>Otomatik sistemlerle yapılan analiz sonucunda aleyhinize çıkan sonuca <strong>itiraz etme</strong></li>
+<li>Hukuka aykırı işleme nedeniyle <strong>zarara uğramanız hâlinde tazminat talep etme</strong></li>
+</ul>
+<h3>6.2. GDPR Kapsamında (AB / AAB Kullanıcıları)</h3>
+<ul>
+<li><strong>Erişim hakkı</strong> — verilerinizin bir kopyasını talep etme</li>
+<li><strong>Düzeltme hakkı</strong> — yanlış verileri düzelttirme</li>
+<li><strong>Silme hakkı ("unutulma hakkı")</strong> — hesabınızı ve verilerinizi sildirme</li>
+<li><strong>İşlemeyi kısıtlama hakkı</strong></li>
+<li><strong>Veri taşınabilirliği hakkı</strong> — verilerinizi makine okunabilir formatta alma</li>
+<li><strong>İtiraz hakkı</strong> — meşru menfaate dayalı işlemeye itiraz</li>
+<li><strong>Onayı geri çekme hakkı</strong> — onaya dayalı işlemeler için (örn. reklam)</li>
+<li>Yerel <strong>Veri Koruma Otoritenize şikâyet</strong> etme hakkı</li>
+</ul>
+<h3>6.3. Haklarınızı Nasıl Kullanırsınız</h3>
+<p><strong>diova@diova.app</strong> adresine talebinizi iletin. <strong>30 gün içinde</strong> yanıt vereceğiz. Hassas işlemler (örn. veri silme) öncesi kimlik doğrulaması talep edebiliriz.</p>
+<p>Hesabınızı doğrudan Uygulamadan da silebilirsiniz: <strong>Ayarlar → Hesap → Hesabı Sil</strong>.</p>
+<hr />
+<h2>7. Çocukların Gizliliği</h2>
+<p>Uygulama, <strong>13 yaşın altındaki çocuklar</strong> (veya bulunduğunuz yargı bölgesinde eşdeğer asgari yaş) için tasarlanmamıştır. Bu yaşın altındaki çocuklardan bilerek veri toplamayız. Bir çocuğun bize kişisel veri sağladığını düşünüyorsanız <strong>diova@diova.app</strong> ile iletişime geçin, veriyi sileceğiz.</p>
+<p>13–17 yaş arası kullanıcılar için abonelik özelliklerini kullanmadan önce <strong>veli onayı alınmasını öneririz</strong>.</p>
+<hr />
+<h2>8. Güvenlik</h2>
+<p>Verilerinizi korumak için sektör standardı güvenlik önlemleri uygularız:</p>
+<ul>
+<li>Tüm ağ iletişimi için <strong>iletim sırasında şifreleme</strong> (TLS 1.2+)</li>
+<li>Saklanan veriler için <strong>dinlenme hâlinde şifreleme</strong> (AES-256)</li>
+<li><strong>Hash'lenmiş parolalar</strong> (bcrypt veya eşdeğer) — düz parolanızı asla görmeyiz</li>
+<li><strong>Erişim kontrolleri</strong> — yalnızca yetkili personel kullanıcı verilerine erişebilir</li>
+<li>Altyapımızın <strong>düzenli güvenlik incelemeleri</strong></li>
+</ul>
+<p>Hiçbir sistem %100 güvenli değildir. Kişisel verilerinizi etkileyen bir veri ihlali durumunda, GDPR / KVKK gerekliliklerine uygun olarak sizi ve ilgili Veri Koruma Otoritesini <strong>72 saat içinde</strong> bilgilendireceğiz.</p>
+<hr />
+<h2>9. Çerezler ve Benzer Teknolojiler</h2>
+<p>Uygulamanın kendisi tarayıcı çerezi kullanmaz. Ancak reklam ortağımız (AdMob), reklam sunumu için <strong>cihaz tanımlayıcılarını</strong> kullanabilir. Web sitemiz (varsa) temel analitik için çerezler kullanabilir — web sitesinin ayrı çerez bildirimine bakınız.</p>
+<hr />
+<h2>10. Bu Gizlilik Politikasındaki Değişiklikler</h2>
+<p>Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Önemli değişiklikler, yürürlüğe girmeden <strong>en az 30 gün önce</strong> Uygulama içi bildirim veya e-posta yoluyla iletilir. Üst kısımdaki "Son güncelleme" tarihi en son revizyonu yansıtır. Değişiklikler yürürlüğe girdikten sonra Uygulamayı kullanmaya devam etmeniz, <strong>kabul anlamına gelir</strong>.</p>
+<hr />
+<h2>11. İletişim ve Veri Koruma Talepleri</h2>
+<p>Gizlilik ile ilgili sorular, talepler veya şikâyetler için:</p>
+<p><strong>Veri Sorumlusu / Data Controller:</strong>
+<strong>Resul Sarı</strong>, <strong>Diova</strong> ticari adıyla faaliyet gösteren şahıs şirketi (Türkiye)
+E-posta: <strong>diova@diova.app</strong></p>
+<p><strong>AB / AAB kullanıcıları:</strong> Yerel Veri Koruma Otoritenize şikâyette bulunma hakkınız mahfuzdur.</p>
+<p><strong>Türkiye kullanıcıları:</strong> Kişisel Verileri Koruma Kurumu'na (<a href="https://www.kvkk.gov.tr">www.kvkk.gov.tr</a>) şikâyette bulunma hakkınız mahfuzdur.</p>
+<hr />
+<p><em>Gizliliğiniz bizim için önemli. Bu politikada anlaşılmayan bir şey varsa, bize yazın — sade dille açıklayalım.</em></p>
+  </article>
+
+</div>
+
+</body>
+</html>
